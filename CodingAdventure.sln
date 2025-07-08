@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntAndSlimeSimulation", "AntAndSlimeSimulation\AntAndSlimeSimulation.csproj", "{4559ACA3-90A8-4F61-A691-71A0B7EC3BE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife", "GameOfLife\GameOfLife.csproj", "{C5DB2AB9-3D83-4C59-8DB0-84517F213A7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleRuleLife", "SimpleRuleLife\SimpleRuleLife.csproj", "{1FC05BBF-FF40-4D49-ACA8-454BB425E3C0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4559ACA3-90A8-4F61-A691-71A0B7EC3BE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4559ACA3-90A8-4F61-A691-71A0B7EC3BE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4559ACA3-90A8-4F61-A691-71A0B7EC3BE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4559ACA3-90A8-4F61-A691-71A0B7EC3BE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5DB2AB9-3D83-4C59-8DB0-84517F213A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5DB2AB9-3D83-4C59-8DB0-84517F213A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5DB2AB9-3D83-4C59-8DB0-84517F213A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5DB2AB9-3D83-4C59-8DB0-84517F213A7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FC05BBF-FF40-4D49-ACA8-454BB425E3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC05BBF-FF40-4D49-ACA8-454BB425E3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC05BBF-FF40-4D49-ACA8-454BB425E3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC05BBF-FF40-4D49-ACA8-454BB425E3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
