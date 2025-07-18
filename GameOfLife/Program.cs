@@ -3,15 +3,17 @@ using Raylib_cs;
 
 class Program {
     private static bool _canDrawing = true;
+    private const int Width = 1920;
+    private const int Height = 1080;
     private const int Cols = 320;
     private const int Rows = 180;
-    private const int SquareSize = 1600 / Cols;
+    private const int SquareSize = Width / Cols;
 
     private static readonly Vector2[] Grid = new Vector2[Cols * Rows];
 
     [STAThread]
     public static void Main() {
-        Raylib.InitWindow(1600, 900, "Game of Life");
+        Raylib.InitWindow(Width, Height, "Game of Life");
         while (!Raylib.WindowShouldClose()) {
             Input();
 
@@ -45,7 +47,7 @@ class Program {
             Raylib.DrawRectanglePro(rect, Vector2.One, 0f, Color.DarkBlue);
         }
 
-        Raylib.DrawFPS(20, 870);
+        Raylib.DrawFPS(20, Height - 30);
         Raylib.EndDrawing();
     }
 
@@ -54,10 +56,8 @@ class Program {
     }
 
     private static void Update() {
-        var rng = new Random();
-
         for (var i = 0; i < Cols * Rows; i++) {
-            Grid[i] = new Vector2(rng.Next(0, Cols), rng.Next(0, Rows));
+            Grid[i] = new Vector2(Raylib.GetRandomValue(0, Cols), Raylib.GetRandomValue(0, Rows));
         }
     }
 }

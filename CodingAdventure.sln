@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameOfLife", "GameOfLife\Ga
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleRuleLife", "SimpleRuleLife\SimpleRuleLife.csproj", "{1FC05BBF-FF40-4D49-ACA8-454BB425E3C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QtreeCollision", "QtreeCollision\QtreeCollision.csproj", "{4EDAEE95-E7C7-4FC4-BE38-1EE2ADE50BEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuadTree", "QuadTree\QuadTree.csproj", "{E7429D0E-C3EB-4D37-90D8-81A0D71BD478}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{1FC05BBF-FF40-4D49-ACA8-454BB425E3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FC05BBF-FF40-4D49-ACA8-454BB425E3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FC05BBF-FF40-4D49-ACA8-454BB425E3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EDAEE95-E7C7-4FC4-BE38-1EE2ADE50BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EDAEE95-E7C7-4FC4-BE38-1EE2ADE50BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EDAEE95-E7C7-4FC4-BE38-1EE2ADE50BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EDAEE95-E7C7-4FC4-BE38-1EE2ADE50BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7429D0E-C3EB-4D37-90D8-81A0D71BD478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7429D0E-C3EB-4D37-90D8-81A0D71BD478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7429D0E-C3EB-4D37-90D8-81A0D71BD478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7429D0E-C3EB-4D37-90D8-81A0D71BD478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

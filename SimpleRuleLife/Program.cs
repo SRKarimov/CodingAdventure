@@ -3,38 +3,20 @@ using Raylib_cs;
 
 namespace SimpleRuleLife;
 
-class Particle {
-    public Particle(float x, float y, float vx, float vy, Color color) {
-        X = x;
-        Y = y;
-        VX = vx;
-        VY = vy;
-        Size = 2;
-        Color = color;
-    }
-
-    public float X { get; set; }
-    public float Y { get; set; }
-    public float VX { get; set; }
-    public float VY { get; set; }
-    public float Size { get; set; }
-    public Color Color { get; set; }
-}
-
 class SimpleRuleLife {
-    private const int Width = 1600;
-    private const int Height = 900;
+    private const int Width = 1920;
+    private const int Height = 1080;
     private static readonly List<Particle> Particles = [];
     private static List<Particle> _yellow = [];
     private static List<Particle> _red = [];
     private static List<Particle> _green = [];
+    private static List<Particle> _white = [];
 
     private static readonly Random Random = new();
 
     [STAThread]
     public static void Main() {
-        Raylib.InitWindow(Width, Height, "Lift from a Simple Life");
-        Raylib.SetTargetFPS(24);
+        Raylib.InitWindow(Width, Height, "Life from a Simple Rules");
 
         Init();
 
@@ -51,26 +33,32 @@ class SimpleRuleLife {
         _yellow = CreateGroup(1000, Color.Yellow);
         _red = CreateGroup(1000, Color.Red);
         _green = CreateGroup(1000, Color.Green);
+        // _white = CreateGroup(1000, Color.White);
         Particles.AddRange(_yellow);
         Particles.AddRange(_red);
         Particles.AddRange(_green);
+        // Particles.AddRange(_white);
     }
 
     private static void Update() {
-        // Rule(ref _green, ref _green, -0.32f);
-        // Rule(ref _green, ref _green, -0.17f);
-        // Rule(ref _green, ref _green, 0.34f);
-        // Rule(ref _red, ref _green, -0.1f);
-        // Rule(ref _red, ref _green, -0.34f);
-        // Rule(ref _yellow, ref _green, 0.15f);
-        // Rule(ref _yellow, ref _green, -0.2f);
         Rule(ref _green, ref _green, -0.32f);
-        Rule(ref _green, ref _red, -0.17f);
-        Rule(ref _green, ref _yellow, 0.34f);
-        Rule(ref _red, ref _red, -0.1f);
+        Rule(ref _green, ref _green, -0.17f);
+        Rule(ref _green, ref _green, 0.34f);
+        Rule(ref _red, ref _green, -0.1f);
         Rule(ref _red, ref _green, -0.34f);
-        Rule(ref _yellow, ref _yellow, 0.15f);
-        Rule(ref _yellow, ref _green, -0.20f);
+        Rule(ref _yellow, ref _green, 0.15f);
+        Rule(ref _yellow, ref _green, -0.2f);
+        // Rule(ref _green, ref _green, -0.32f);
+        // Rule(ref _green, ref _red, -0.17f);
+        // Rule(ref _green, ref _yellow, 0.34f);
+        // Rule(ref _red, ref _red, -0.1f);
+        // Rule(ref _red, ref _green, -0.34f);
+        // Rule(ref _yellow, ref _yellow, 0.15f);
+        // Rule(ref _yellow, ref _green, -0.20f);
+        // Rule(ref _yellow, ref _red, -0.15f);
+        // Rule(ref _red, ref _green, 0.15f);
+        // Rule(ref _red, ref _white, 0.15f);
+        // Rule(ref _white, ref _green, 0.15f);
     }
 
     private static void Rule(ref List<Particle> first, ref List<Particle> second, float gravity) {
@@ -96,22 +84,26 @@ class SimpleRuleLife {
             a.X += a.VX;
             a.Y += a.VY;
 
-            if (a.X <= 0) {
-                a.VX *= -1;
-                a.X = 0;
-            }
-            else if (a.X >= Width) {
-                a.VX *= -1;
-                a.X = Width - a.Size;
+            switch (a.X) {
+                case <= 0:
+                    a.VX *= -1;
+                    a.X = 0;
+                    break;
+                case >= Width:
+                    a.VX *= -1;
+                    a.X = Width - a.Size;
+                    break;
             }
 
-            if (a.Y <= 0) {
-                a.VY *= -1;
-                a.Y = 0;
-            }
-            else if (a.Y >= Height) {
-                a.VY *= -1;
-                a.Y = Height - a.Size;
+            switch (a.Y) {
+                case <= 0:
+                    a.VY *= -1;
+                    a.Y = 0;
+                    break;
+                case >= Height:
+                    a.VY *= -1;
+                    a.Y = Height - a.Size;
+                    break;
             }
         }
     }
@@ -133,7 +125,7 @@ class SimpleRuleLife {
             DrawRectangle(particle.X, particle.Y, particle.Size, particle.Color);
         }
 
-        Raylib.DrawFPS(20, 870);
+        Raylib.DrawFPS(20, Height - 30);
         Raylib.EndDrawing();
         return;
 
